@@ -92,7 +92,7 @@ deactivate Prodejce
 ----
 
 .Sequence diagram
-image::seq_diagram.png[seq_diagram]
+image::img/seq_diagram.png[seq_diagram]
 
 === Use case diagram
 ----
@@ -129,19 +129,18 @@ Dodavatel --> (Dodání dílů)
 ----
 
 .Use case diagram
-image::uc_diagram.png[uc_diagram]
+image::img/uc_diagram.png[uc_diagram]
 
 == Návrh grafického rozhraní
 
 .Grafické rozhraní: Skladu subdodávek
-image::sklad_subdodavky.jpeg[uc_diagram]
+image::img/sklad_subdodavky.jpeg[uc_diagram]
 
 .Grafické rozhraní: Skladu subdodávek/barev/povrchových úprav
-image::sklad_uni.jpeg[uc_diagram]
+image::img/sklad_uni.jpeg[uc_diagram]
 
 .Grafické rozhraní: Vytvoření nové zakázky
-image::nova_zakazka.jpeg[uc_diagram]
+image::img/nova_zakazka.jpeg[uc_diagram]
 
 .Grafické rozhraní: Vytvoření zakázky a přidávání položek na zakázku
-image::vytvoreni_zakazky_pridavani.jpeg[uc_diagram]
-
+image::img/vytvoreni_zakazky_pridavani.jpeg[uc_diagram]
