@@ -2,7 +2,7 @@
 
 == Scénář
 //Objedání zakázky
-Zákazním nám předá své údaje (Jméno, přijmení, název firmy (údaje spojené s firmou) a kontaktní údaje).
+Zákazník nám předá své údaje (jméno, přijmení, název firmy (údaje spojené s firmou) a kontaktní údaje).
 Dále nám popíše o jaké služby má zájem. Například z výběru z níže napsaných:
 
 * Samostatné podvozky k dostavbě určené pro nejrůznější nástavby (provedení podle požadavků zákazníka)
@@ -22,7 +22,7 @@ Dále nám popíše o jaké služby má zájem. Například z výběru z níže 
 Prodejce tyto informace zpracuje a podle požadavků zákazníka zpracuje objednávku. Vytvoří plán objednávky s předběžnou
 informační cenou. Poté tuto zpracovanou objednávku přeloží zákazníkovi.
 
-Zákazník tento návrh může přijmout i nemusí. Popřípadě se deřeší další nesrovnalosti.
+Zákazník tento návrh může přijmout i nemusí. Popřípadě se dořeší další nesrovnalosti.
 
 Do určité výše ceny zakázky je zákazník povinen zaplatit část z této částky předem.
 
@@ -92,7 +92,6 @@ deactivate Prodejce
 ----
 
 .Sequence diagram
-[link=seq_diagram.png]
 image::seq_diagram.png[seq_diagram]
 
 === Use case diagram
@@ -130,6 +129,19 @@ Dodavatel --> (Dodání dílů)
 ----
 
 .Use case diagram
-[link=uc_diagram.png]
 image::uc_diagram.png[uc_diagram]
+
+== Návrh grafického rozhraní
+
+.Grafické rozhraní: Skladu subdodávek
+image::sklad_subdodavky.jpeg[uc_diagram]
+
+.Grafické rozhraní: Skladu subdodávek/barev/povrchových úprav
+image::sklad_uni.jpeg[uc_diagram]
+
+.Grafické rozhraní: Vytvoření nové zakázky
+image::nova_zakazka.jpeg[uc_diagram]
+
+.Grafické rozhraní: Vytvoření zakázky a přidávání položek na zakázku
+image::vytvoreni_zakazky_pridavani.jpeg[uc_diagram]
 
