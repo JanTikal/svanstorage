@@ -7,17 +7,17 @@ import java.sql.*;
 public class Login extends JFrame{
     private JFrame frame;
     private JPanel rootPanel;
-    private JButton loginButton;
-    private JTextField loginTextField;
     private JPasswordField passTextField;
+    private JTextField loginTextField;
+    private JButton loginButton;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Login okno = new Login();
-                    okno.frame.setVisible(true);
+                    Login login = new Login();
+                    login.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -27,35 +27,19 @@ public class Login extends JFrame{
 
     Connection connection = null;
 
-    /* vytvoření aplikace */
     public Login() {
-        initialize();
         connection = SQLConnection.dbConnector();
-    }
+        setContentPane(rootPanel);
+        pack();
+        setBounds(50,50,1000,450);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    /* inicializace okna */
-    private void initialize() {
-        frame = new JFrame();
-        frame.setLayout(null);
-
-        frame.setBounds(50,50,500,500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JTextField loginTextField = new JTextField();
-        loginTextField.setBounds(100,70,180,20);
-        frame.getContentPane().add(loginTextField);
-
-        JPasswordField passTextField = new JPasswordField();
-        passTextField.setBounds(100,100,180,20);
-        frame.getContentPane().add(passTextField);
-
-        JButton loginButton = new JButton("Login");
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
 
                 try {
-                    String query = "select * from uzivatele where login = ? and pass = ?";
+                    String query = "SELECT * FROM UZIVATELE WHERE LOGIN = ? and PASS = ?";
                     PreparedStatement pst = connection.prepareStatement(query);
 
                     pst.setString(1, loginTextField.getText()); // (index parametru, první question mark) --- máme dva question mark, tak nejdřív ten první (index 1)
@@ -69,12 +53,12 @@ public class Login extends JFrame{
                         count = count + 1;
                     }
                     if(count == 1) {
-                        JOptionPane.showMessageDialog(null, "Correct");
-                        frame.dispose();
+                        JOptionPane.showMessageDialog(null, "Správné");
+                        dispose();
                         Storage storage = new Storage();
                         storage.setVisible(true);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Wrong");
+                        JOptionPane.showMessageDialog(null, "Špatné");
                     }
                     rs.close();
                     pst.close();
@@ -83,7 +67,9 @@ public class Login extends JFrame{
                 }
             }
         });
-        loginButton.setBounds(300,100,100,20);
-        frame.getContentPane().add(loginButton);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
